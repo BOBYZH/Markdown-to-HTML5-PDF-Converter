@@ -13,4 +13,4 @@ npm i
 ``
 npm run start
 ``
-5. 轉換後，HTML與PDF檔案皆名為"O"
+5. 轉換後，HTML與PDF檔案皆名為"Output"
