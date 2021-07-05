@@ -1,4 +1,4 @@
-// Set showdown and fs
+// Set used packages
 const showdown = require('showdown')
 const converter = new showdown.Converter()
 
@@ -17,3 +17,8 @@ console.log(mdContent)
 console.log('')
 console.log('HTML:')
 console.log(htmlContent)
+
+// Generate HTML file
+fs.writeFileSync('./Output.html', htmlContent)
+
+// Generate PDF file
