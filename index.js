@@ -5,7 +5,7 @@ const converter = new showdown.Converter()
 const fs = require("fs")
 
 // Define the path of markdown file
-const mdPath = './README.md' // default
+const mdPath = './Input.md' // default
 
 // Define variables of md and html
 const mdContent = fs.readFileSync(mdPath, "utf8")
