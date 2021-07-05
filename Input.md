@@ -1,5 +1,5 @@
 # Title
-(descripton)
+(description)
 
 [link](https://replit.com/@BOBHYZ/Markdown-to-HTML5-PDF-Converter#README.md)
 
