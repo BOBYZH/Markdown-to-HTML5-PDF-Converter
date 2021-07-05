@@ -4,7 +4,7 @@ const converter = new showdown.Converter()
 
 const fs = require("fs")
 
-const puppeteer = require('puppeteer')
+const pdf = require('html-pdf')
 
 // Define the path of files
 const mdPath = './Input.md' // default
@@ -26,16 +26,8 @@ console.log(htmlContent)
 fs.writeFileSync(htmlPath, htmlContent)
 
 // Generate PDF file
-async function printPDF(path) {
-  const browser = await puppeteer.launch({ headless: true })
-  const page = await browser.newPage()
-  await page.goto(path, {waitUntil: 'networkidle0'})
-
-  const pdfContent = await page.pdf({ format: 'A4' }) 
-  await browser.close()
-  
-  console.log(pdfContent)
-  await fs.writeFile(pdfPath, pdfContent)
-}
-
-printPDF(htmlPath)
+pdf.create(htmlContent, { format: 'Letter' }
+).toFile(pdfPath, function (err, res) {
+  if (err) return console.log(err);
+  console.log(res)
+})
